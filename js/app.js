@@ -10,6 +10,8 @@ function Horned(animal){
 
 Horned.allAnimals =[];
 
+var keywords = [];
+
 Horned.prototype.render = function(){
   $('main').append ('<div class ="clone"></div>');
   let animalClone = $('div[class="clone"]');
@@ -25,6 +27,15 @@ Horned.prototype.render = function(){
   animalClone.attr('class', this.keyword);
 }
 
+Horned.prototype.keywords = function(){
+  if (keywords.includes(this.keyword)){
+    console.log(this.keyword)
+  } else {
+    keywords.push(this.keyword);
+    $('select').append(`<option value="${this.keyword}">${this.keyword}</option>`);
+  }
+}
+
 Horned.readJson =() => {
   $.get('../data/page-1.json', 'json')
     .then (data => {
@@ -37,6 +48,14 @@ Horned.readJson =() => {
 
 Horned.loadAnimals =() => {
   Horned.allAnimals.forEach (animal => animal.render())
+  Horned.allAnimals.forEach (animal => animal.keywords())
 }
 
 $(()=> Horned.readJson());
+
+$('select[name="options"]').on('change', function() {
+  let $selection = $(this).val();
+  console.log('Money selection', $selection)
+  $('div').hide()
+  $(`div[class="${$selection}"]`).show()
+})
