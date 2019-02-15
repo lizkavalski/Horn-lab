@@ -1,9 +1,16 @@
+body{ 
+    margin: auto;
+    width: 780px;
+}
 h1{
     font-family: 'Indie Flower', cursive;
+    font-size: 5em;
 }
-main{
-    margin: auto;
+h2,p{
+    text-align: center
 }
 div{
+
     float: left;
 }
+

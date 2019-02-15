@@ -12,3 +12,25 @@ Filter Images:
     start-time:10:30
     end-time: 12:42
     Actully time: 2hr 8 min
+
+CSS styleing(floats)
+-Did not get to it-
+
+2/15/2019
+Pagination
+    Estmatied time:
+    Start-time:
+    end-time:
+    Actuall time:
+
+Templating
+    Estmatied time:
+    Start-time:
+    end-time:
+    Actuall time:
+
+Styling with Flexbar:
+    Estmatied time:
+    Start-time:
+    end-time:
+    Actuall time:
