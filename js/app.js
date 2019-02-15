@@ -11,20 +11,31 @@ function Horned(animal){
 Horned.allAnimals =[];
 var keywords = [];
 
-Horned.prototype.render = function(){
-  $('main').append ('<div class ="clone"></div>');
-  let animalClone = $('div[class="clone"]');
-
-  let animalHtml = $('#photo-template').html();
-
-  animalClone.html(animalHtml);
-
-  animalClone.find('h2').text(this.title);
-  animalClone.find('img').attr('src', this.image_url);
-  animalClone.find('p').text(this.description);
-  animalClone.removeClass('clone');
-  animalClone.attr('class', this.keyword);
+Horned.prototype.toHtml =function(){
+  const template = $('#animal-template').html();
+  const compiled = Handlebars.compile(template);
+  return compiled(this);
 }
+
+Horned.prototype.render = function(){
+//   $('main').append ('<div class ="clone"></div>');
+//   let animalClone = $('div[class="clone"]');
+
+//   let animalHtml = $('#photo-template').html();
+
+//   animalClone.html(animalHtml);
+
+//   animalClone.find('h2').text(this.title);
+//   animalClone.find('img').attr('src', this.image_url);
+//   animalClone.find('p').text(this.description);
+//   animalClone.removeClass('clone');
+//   animalClone.attr('class', this.keyword);
+Horned.allAnimals.forEach(animalObject => {
+  $('#animals').append(animalObject.toHtml());
+});
+}
+
+
 
 Horned.prototype.keywords = function(){
   if (keywords.includes(this.keyword)){
