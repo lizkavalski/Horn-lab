@@ -18,14 +18,14 @@ CSS styleing(floats)
 
 2/15/2019
 Pagination
-    Estmatied time:
-    Start-time:
-    end-time:
-    Actuall time:
+    Estmatied time: 1 hr 30 min
+    Start-time: 10:00am
+    end-time:11:50
+    Actuall time: 1hr 50min
 
 Templating
-    Estmatied time:
-    Start-time:
+    Estmatied time: 1hr
+    Start-time:11:50
     end-time:
     Actuall time:
 
