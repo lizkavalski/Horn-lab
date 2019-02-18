@@ -18,29 +18,13 @@ Horned.prototype.toHtml =function(){
 }
 
 Horned.prototype.render = function(){
-//   $('main').append ('<div class ="clone"></div>');
-//   let animalClone = $('div[class="clone"]');
-
-//   let animalHtml = $('#photo-template').html();
-
-//   animalClone.html(animalHtml);
-
-//   animalClone.find('h2').text(this.title);
-//   animalClone.find('img').attr('src', this.image_url);
-//   animalClone.find('p').text(this.description);
-//   animalClone.removeClass('clone');
-//   animalClone.attr('class', this.keyword);
-Horned.allAnimals.forEach(animalObject => {
-  $('#animals').append(animalObject.toHtml());
-});
+  Horned.allAnimals.forEach(animalObject => {
+    $('#animals').append(animalObject.toHtml());
+  });
 }
 
-
-
 Horned.prototype.keywords = function(){
-  if (keywords.includes(this.keyword)){
-    
-  } else {
+  if (keywords.includes(this.keyword)){} else {
     keywords.push(this.keyword);
     console.log(this.keyword)
     $('select').append(`<option value="${this.keyword}" id="created">${this.keyword}</option>`);
@@ -58,7 +42,9 @@ Horned.readJson =(page) => {
 }
 
 Horned.loadAnimals =() => {
-  Horned.allAnimals.forEach (animal => animal.render())
+  Horned.allAnimals.forEach(animalObject => {
+    $('#animals').append(animalObject.toHtml());
+  });
   Horned.allAnimals.forEach (animal => animal.keywords())
 }
 
